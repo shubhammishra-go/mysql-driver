@@ -6,15 +6,23 @@ import (
 
 func main() {
 
-	db, err := crud.Open_DB()
+	//note it can opened anything so we can't say it opened right sql connection
+	//once we will perform any operations then it will show show error it opened a wrong string
 
-	if err != nil {
-		panic(err)
-	}
+	db, _ := crud.Open_DB()
+
+	//that is why testing over here is not good it will always show err==>nil
+
+	// if err != nil {
+	// 	log.Println("Can't open database!")
+	// 	panic(err)
+	// } else {
+	// 	log.Println("Database successfully opened!")
+	// }
 
 	//                   Create Database if doesnot created & using it
 
-	crud.Create_DB(db, "MMT")
+	//crud.Create_DB(db, "MMT")
 
 	//as i already excuted this command  PRIMARY KEY is Roll number
 
